@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="container mt-3">
+    <div class="card">
+      <div class="card-header"> Bill</div>
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th>ID</th><th>Bill Date</th><th>Customer ID</th><th>Customer</th><th>Product Items</th>
+          </tr>
+          <td th:text="${bill.id}"></td>
+          <td th:text="${bill.billingDate}"></td>
+          <td th:text="${bill.customerID}"></td>
+          <td th:text="${bill.customer}"></td>
+          <tr th:each="p:${bill.productItems}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.price}"></td>
+            <td th:text="${p.quantity}"></td>
+            <td th:text="${p.product}"></td>
+          </tr>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

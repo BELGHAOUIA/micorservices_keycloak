@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Customers</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="container mt-3">
+    <div class="card">
+      <div class="card-header">Customers List</div>
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th>ID</th><th>Name</th><th>Email</th>
+          </tr>
+          <tr th:each="c:${customers}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.email}"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

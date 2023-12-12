@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    discovery:
+      enabled: true
+  application:
+    name: inventory-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9090/realms/soa-realm/protocol/openid-connect/certs
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+      keycloak: DEBUG
